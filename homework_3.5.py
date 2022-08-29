@@ -11,3 +11,4 @@ print('the place is free in the VIP_box?', VIP_box)
 
 free_places_common = common_room.get(2, 'the place is free')
 print('the place is free in the common rooms?', free_places_common)
+

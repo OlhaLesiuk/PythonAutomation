@@ -7,3 +7,4 @@ alcohol_blacklist = {'Sarah Parker', 'John Wick', 'Jack Sparrow', 'Kim Kardashia
 
 common_names = casino_blacklist & poker_blacklist & alcohol_blacklist
 print('Common names:', common_names)
+
