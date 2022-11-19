@@ -47,12 +47,6 @@ def test_02():
     login_button_element.click()
     time.sleep(5)
 
-    '''
-    I tried to user relative XPath for logout!_button_locator and 
-    it didn't want to interact '//a[contains(text(),'Вихід')]'
-    So I used absolute Xpath instead 
-    '''
-
     logout1_button_locator = ".header-top [href='\/ua\/user\/']"
     logout1_button_element = chrome_driver.find_element(By.CSS_SELECTOR, logout1_button_locator)
     logout1_button_element.click()
