@@ -1,0 +1,50 @@
+https://makeup.com.ua/ua/
+
+#XPATH
+1. //picture[@title='Pre-party Black Friday 2022']
+2. //a[contains(text(),'Вся парфюмерія')]
+3. //a[contains(text(),'Аксесуари та техніка')]
+4. //div[@class='button']
+5. //a[contains(text(),'(044) 593 82 56')]
+6. //input[@id='search-input']
+7. //span[contains(text(),'Кошик')]
+8. //div[@id='search-toggle']
+9. //div[@id='menu-toggle']
+10. //div[@id='slider-id-afe1a50a-2b8f-4406-908f-1cbe2e31959e']//div[@class='simple-slider-list-wrap']
+11. //div[@class='slider-page__labels']//label[@for='id-slider-afe1a50a-2b8f-4406-908f-1cbe2e31959e-0']
+12. //div[@class='footer-copy-right']
+13. //a[@href='https://www.facebook.com/makeup.ua']
+14. //a[@href='https://www.youtube.com/user/makeupcomua/']
+15. //div[@class='button-up']
+16. //div[@class='footer-text global']
+17. //a[@href='https://makeup.bg/']//span[@class='flag']
+18. //a[contains(text(),'Додаток')]
+19. //a[contains(text(),'Про нас')]
+20. //a[@class='footer-lang__link'][contains(text(),'Укр')]
+21. //a[contains(text(),'написати нам лист')]
+22. //button[contains(text(),'підписатися')]
+23. //input[@placeholder='Електронна пошта']
+24. //div[@class='slider-page__labels']//label[@for='id-slider-d673efc1-2f8d-40a0-ae00-d4fb13a258fe-4']
+25. //li[@class='simple-slider-list__item labeled active']//a[contains(text(),'27 відгуків')]
+26. //li[@class='simple-slider-list__item labeled active']//div[@title='50ml'][normalize-space()='50ml']
+27. //li[@class='simple-slider-list__item labeled active']//div[@class='button buy'][contains(text(),'Купити')]
+28. //li[@class='simple-slider-list__item labeled active']//i[contains(text(),'HIT')]
+29. //li[@class='simple-slider-list__item labeled active']//span[@class='star-list'][contains(text(),'★★★★')]
+30. //li[@class='simple-slider-list__item labeled active']//img[@id='option-preview-91557']
+
+#CSS locators
+1. [title='MAKEUP club'] img
+2. a[title='MAKEUP: інтернет-магазин косметики та ароматів']
+3. .empty.header-basket
+4. div#menu-toggle
+5. .header-office
+6. [data-src='\/ajax\/block\/slider\/648\/'] .simple-slider-list-wrap
+7. .button-up
+8. [data-src='\/ajax\/block\/slider\/566\/'] .labeled:nth-of-type(1) .info-product-wrapper i
+9. [data-src='\/ajax\/block\/slider\/569\/'] .simple-slider_actions .slider-page__labels .slider-page__label:nth-of-type(2)
+10. [target='_blank']:nth-child(18) .flag
+11. .social.fb [target]
+12. [href='\/ua\/mobileapp\/']
+13. .footer-nav-wrap .col:nth-of-type(4) [rel]
+14. .footer-lang li:nth-of-type(1) .footer-lang__link
+15. .footer-nav-wrap .col:nth-of-type(3) [rel]
