@@ -4,6 +4,12 @@ from HW_18.framework_from_scratch.page_objects.login_page import LoginPage
 from HW_18.framework_from_scratch.page_objects.main_page import MainPage
 from HW_18.framework_from_scratch.utilities.config_parser import ReadConfig
 from HW_18.framework_from_scratch.utilities.driver_factory import DriverFactory
+from selenium.webdriver.support.wait import WebDriverWait
+
+
+@pytest.fixture()
+def create_web_object(create_driver):
+    return WebDriverWait(create_driver, 5)
 
 
 @pytest.fixture(scope='session')

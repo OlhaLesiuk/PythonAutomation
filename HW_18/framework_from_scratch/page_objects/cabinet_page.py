@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-
 from HW_18.framework_from_scratch.utilities.web_ui.base_page import BasePage
 
 

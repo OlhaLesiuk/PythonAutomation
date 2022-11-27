@@ -9,6 +9,11 @@ def test_02(open_login_page):
     assert cabinet_page.is_displayed() is True, "User was not logged in!"
 
 
-def test_03(log_out_from_cabinet):
+def test_03(cabinet_page_view):
+    cabinet_page = cabinet_page_view
+    assert cabinet_page.is_displayed() is True, 'User is unable to see cabinet functions'
+
+
+def test_04(log_out_from_cabinet):
     log_out = log_out_from_cabinet
     assert log_out.is_displayed() is True, "User was not logged out!"

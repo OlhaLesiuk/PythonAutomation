@@ -10,7 +10,7 @@ class DriverFactory:
     FIREFOX = 2
 
     @staticmethod
-    def create_driver(driver_id: int, is_headless=True):
+    def create_driver(driver_id: int, is_headless=False):
         if int(driver_id) == 1:
             chrome_options = Options()
             if is_headless:
