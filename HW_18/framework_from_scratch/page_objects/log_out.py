@@ -8,5 +8,5 @@ class Logout(BasePage):
         super().__init__(driver)
     __logout2_button_locator = (By.XPATH, "//a[contains(text(),'Вихід'')]")
 
-    def click_login_button(self):
-        self.click(self.__logout2_button_locator)
+    def click_logout_button(self):
+        self._click(self.__logout2_button_locator)

@@ -8,28 +8,28 @@ class BasePage:
         self._driver = driver
         self.__wait = WebDriverWait(self._driver, 5)
 
-    def wait_until_element_located(self, locator):
+    def _wait_until_element_located(self, locator):
         return self.__wait.until(ec.presence_of_element_located(locator))
 
-    def wait_until_clickable(self, locator):
+    def _wait_until_clickable(self, locator):
         return self.__wait.until(ec.element_to_be_clickable(locator))
 
-    def wait_until_element_visible(self, locator):
+    def _wait_until_element_visible(self, locator):
         return self.__wait.until(ec.visibility_of_element_located(locator))
 
-    def send_keys(self, locator, value, is_clear=True):
-        element = self.wait_until_element_located(locator)
+    def _send_keys(self, locator, value, is_clear=True):
+        element = self._wait_until_element_located(locator)
         if is_clear:
             element.clear()
             element.send_keys(value)
 
-    def click(self, locator):
-        element = self.wait_until_clickable(locator)
+    def _click(self, locator):
+        element = self._wait_until_clickable(locator)
         element.click()
 
-    def is_displayed(self, locator):
+    def _is_displayed(self, locator):
         try:
-            self.wait_until_element_visible(locator)
+            self._wait_until_element_visible(locator)
             return True
         except TimeoutException:
             return False

@@ -12,16 +12,19 @@ class LoginPage(BasePage):
     __login_button_locator = (By.XPATH, '//button[contains(text(),"Увійти")]')
 
     def set_email(self, email_value):
-        self.send_keys(self.__email_input_locator, email_value)
+        self._send_keys(self.__email_input_locator, email_value)
         return self
 
     def set_password(self, password_value):
-        self.send_keys(self.__password_input_locator, password_value)
+        self._send_keys(self.__password_input_locator, password_value)
         return self
 
     def click_login_button(self):
-        self.click(self.__login_button_locator)
+        self._click(self.__login_button_locator)
 
     def login(self, email_value, password_value):
-        self.set_email(email_value).set_password(password_value).click(self.click_login_button())
+        self.set_email(email_value).set_password(password_value).click_login_button()
         return CabinetPage(self._driver)
+
+    def is_enter_button_displayed(self):
+        return self._is_displayed(self.__login_button_locator)
