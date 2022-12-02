@@ -27,7 +27,7 @@ class BasePage:
         element = self._wait_until_clickable(locator)
         element.click()
 
-    def _is_displayed(self, locator):
+    def is_displayed(self, locator):
         try:
             self._wait_until_element_visible(locator)
             return True

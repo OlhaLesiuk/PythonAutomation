@@ -7,14 +7,14 @@ class MainPage(BasePage):
     def __int__(self, driver):
         super().__init__(driver)
 
-    __main_button_locator = (By.CSS_SELECTOR, "///div[@innertext='Вхід до кабінету']")
+    __login_button = (By.CSS_SELECTOR, "///div[@innertext='Вхід до кабінету']")
+
+    def is_login_button_displayed(self):
+        return self.is_displayed(self.__login_button)
 
     def click_login_button(self):
-        self._click(self.__main_button_locator)
+        self._click(self.__login_button)
 
     def login(self):
         self.click_login_button()
         return CabinetPage(self._driver)
-
-    def is_login_button_displayed(self):
-        return self._is_displayed(self.__main_button_locator)

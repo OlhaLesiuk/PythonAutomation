@@ -10,3 +10,6 @@ class Logout(BasePage):
 
     def click_logout_button(self):
         self._click(self.__logout2_button_locator)
+
+    def is_logout2_button_displayed(self):
+        return self._is_displayed(self.__logout2_button_locator)
