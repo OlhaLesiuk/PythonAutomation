@@ -27,4 +27,4 @@ class LoginPage(BasePage):
         return CabinetPage(self._driver)
 
     def is_enter_button_displayed(self):
-        return self._is_displayed(self.__login_button_locator)
+        return self.is_displayed(self.__login_button_locator)

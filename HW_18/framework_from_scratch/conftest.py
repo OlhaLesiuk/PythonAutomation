@@ -1,4 +1,5 @@
 import pytest
+from HW_18.framework_from_scratch.page_objects.cabinet_page import CabinetPage
 from HW_18.framework_from_scratch.page_objects.log_out import Logout
 from HW_18.framework_from_scratch.page_objects.login_page import LoginPage
 from HW_18.framework_from_scratch.page_objects.main_page import MainPage
@@ -29,6 +30,11 @@ def open_main_page(create_driver):
 @pytest.fixture()
 def open_login_page(create_driver):
     return LoginPage(create_driver)
+
+
+@pytest.fixture()
+def cabinet_page_view(create_driver):
+    return CabinetPage(create_driver)
 
 
 @pytest.fixture()

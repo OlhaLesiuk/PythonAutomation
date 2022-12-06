@@ -8,4 +8,4 @@ class CabinetPage(BasePage):
     __logout1_button_locator = (By.CSS_SELECTOR, ".header-top [href='\/ua\/user\/']")
 
     def is_logout_button_displayed(self):
-        return self._is_displayed(self.__logout1_button_locator)
+        return self.is_displayed(self.__logout1_button_locator)
