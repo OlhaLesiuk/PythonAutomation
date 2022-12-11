@@ -7,25 +7,29 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    __login_button = (By.CSS_SELECTOR, '.header-top [data-popup-handler]')
-    __email_input_locator = (By.XPATH, '//input[@name="user_login"]')
-    __password_input_locator = (By.CSS_SELECTOR, 'input[placeholder="Пароль"]')
-    __enter_button = (By.XPATH, '//button[contains(text(),"Увійти")]')
+    _login_button = (By.CSS_SELECTOR, '.header-top [data-popup-handler]')
+    _email_input_locator = (By.XPATH, '//input[@name="user_login"]')
+    _password_input_locator = (By.CSS_SELECTOR, 'input[placeholder="Пароль"]')
+    _enter_button = (By.XPATH, '//button[contains(text(),"Увійти")]')
 
     def click_login_button(self):
-        self._click(self.__login_button)
+        self._click(self._login_button)
+        return LoginPage(self._driver)
 
     def set_email(self, email_value):
-        self._send_keys(self.__email_input_locator, email_value)
+        self._send_keys(self._email_input_locator, email_value)
         return self
 
     def set_password(self, password_value):
-        self._send_keys(self.__password_input_locator, password_value)
+        self._send_keys(self._password_input_locator, password_value)
         return self
 
     def login(self, email_value, password_value):
-        self.set_email(email_value).set_password(password_value).click_login_button()
+        self.set_email(email_value).set_password(password_value).click_enter_button()
+
+    def click_enter_button(self):
+        self._click(self._enter_button)
         return CabinetPage(self._driver)
 
     def is_enter_button_displayed(self):
-        return self.is_displayed(self.__enter_button)
+        return self.is_displayed(self._enter_button)
