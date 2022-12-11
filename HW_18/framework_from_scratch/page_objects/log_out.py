@@ -4,7 +4,7 @@ from HW_18.framework_from_scratch.utilities.web_ui.base_page import BasePage
 
 
 class Logout(BasePage):
-    def __int__(self, driver):
+    def __init__(self, driver):
         super().__init__(driver)
     __logout2_button_locator = (By.XPATH, "//a[contains(text(),'Вихід')]")
 

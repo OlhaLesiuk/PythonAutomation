@@ -1,5 +1,3 @@
-
-
 def test_01(open_main_page):
     main_page = open_main_page
     assert main_page.is_login_button_displayed() is True, 'User is unable to see Main page'
