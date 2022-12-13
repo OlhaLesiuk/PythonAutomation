@@ -3,6 +3,7 @@ from HW_18.framework_from_scratch.page_objects.cabinet_page import CabinetPage
 from HW_18.framework_from_scratch.page_objects.log_out import Logout
 from HW_18.framework_from_scratch.page_objects.login_page import LoginPage
 from HW_18.framework_from_scratch.page_objects.main_page import MainPage
+from HW_18.framework_from_scratch.page_objects.personal_cabinet import PersonalCabinet
 from HW_18.framework_from_scratch.utilities.config_parser import ReadConfig
 from HW_18.framework_from_scratch.utilities.driver_factory import DriverFactory
 from selenium.webdriver.support.wait import WebDriverWait
@@ -33,8 +34,13 @@ def open_login_page(create_driver):
 
 
 @pytest.fixture()
-def cabinet_page_view(create_driver):
+def cabinet_page(create_driver):
     return CabinetPage(create_driver)
+
+
+@pytest.fixture()
+def personal_cabinet_menu(create_driver):
+    return PersonalCabinet(create_driver)
 
 
 @pytest.fixture()

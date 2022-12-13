@@ -2,15 +2,21 @@ from selenium.webdriver.common.by import By
 from HW_18.framework_from_scratch.utilities.web_ui.base_page import BasePage
 
 
-class Logout(BasePage):
+class PersonalCabinet(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
+
     _login_button = (By.CSS_SELECTOR, '.header-top [data-popup-handler]')
     _email_input_locator = (By.XPATH, '//input[@name="user_login"]')
     _password_input_locator = (By.CSS_SELECTOR, 'input[placeholder="Пароль"]')
     _enter_button = (By.XPATH, '//button[contains(text(),"Увійти")]')
+    _logout1_button_locator = (By.CSS_SELECTOR, ".header-top [href='\/ua\/user\/']")
+    _basket_button = (By.CSS_SELECTOR, ".header-basket")
     _cabinet_exit_button = (By.CSS_SELECTOR, ".header-top [href='\/ua\/user\/']")
-    _logout_button_locator = (By.CSS_SELECTOR, "[href='\/ua\/user\/logout\/']")
+    _parfume_tab_button = (By.CSS_SELECTOR, ".menu-list .full:nth-of-type(3) .menu-list__link")
+    _about_shop_button = (By.XPATH, "/html/body/div[@class='site-wrap']/div"
+                                    "[@class='main-wrap']//ul[@class="
+                                    "'header-top-list']//a[@href='/ua/about/']")
 
     def click_login_button(self):
         self._click(self._login_button)
@@ -36,9 +42,11 @@ class Logout(BasePage):
         self._click(self._cabinet_exit_button)
         return self
 
-    def logout(self):
-        self._click(self._logout_button_locator)
-        return self
+    def is_cabinet_exit_button_displayed(self):
+        return self.is_displayed(self._cabinet_exit_button)
 
-    def is_login_button_displayed(self):
-        return self.is_displayed(self._login_button)
+    def is_parfume_tab_displayed(self):
+        return self.is_displayed(self._parfume_tab_button)
+
+    def is_about_shop_button_displayed(self):
+        return self.is_displayed(self._about_shop_button)
