@@ -21,7 +21,7 @@ def test_check_open_login_page(open_login_page, env):
     assert login_page.is_enter_button_displayed() is True, "User was not logged in!"
     assert login_page.is_forget_password_link_displayed() is True, 'The user is unable to recover a password'
     assert login_page.is_registration_button_displayed() is True, 'The user is unable to registration an account'
-    assert login_page.is_password_button_displayed() is True, 'The user is unable to enter a password'
+    assert login_page.is_password_field_displayed() is True, 'The user is unable to enter a password'
     assert login_page.is_email_field_displayed() is True, 'The user is unable to enter an email'
 
 

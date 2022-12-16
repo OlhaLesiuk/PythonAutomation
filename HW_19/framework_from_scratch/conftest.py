@@ -9,16 +9,15 @@ from HW_18.framework_from_scratch.utilities.driver_factory import DriverFactory
 from selenium.webdriver.support.wait import WebDriverWait
 from HW_19.framework_from_scratch.utilities.configurations import Configuration
 import configparser
-from HW_18.framework_from_scratch.CONSTANTS import ROOT_DIR
+import os
 
-
+cur_dir = os.path.abspath(os.path.dirname(__file__))
 config = configparser.RawConfigParser()
-config.read(f'{ROOT_DIR}/configuration/configuration.json')
 
 
 @pytest.fixture(scope='session')
 def env():
-    with open(f'{ROOT_DIR}/configuration/configuration.json') as file:
+    with open(f'{cur_dir}/configuration/configuration.json') as file:
         env_dict = json.loads(file.read())
     return Configuration(**env_dict)
 
